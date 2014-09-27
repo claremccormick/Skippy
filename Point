@@ -1,0 +1,5 @@
+class Point
+  def move!
+
+  end
+end
