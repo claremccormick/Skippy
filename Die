@@ -1,0 +1,18 @@
+class Die
+
+  def direction
+  random = rand(3)
+    if random == 0
+      'North'
+
+    elsif random == 1
+      'South'
+
+    elsif random == 2
+      'East'
+
+    else
+      'West'
+    end
+  end
+end

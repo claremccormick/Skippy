@@ -1,4 +1,0 @@
-Skippy
-======
-
-Assignment 1
