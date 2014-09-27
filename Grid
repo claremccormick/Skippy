@@ -1,0 +1,7 @@
+class Grid
+  def lies_outside?
+    if #if point is outside of (0<10, 0<10)
+      true
+    end
+  end
+end
