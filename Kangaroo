@@ -1,17 +1,17 @@
 class Kangaroo
 
   def hop!
-    if Die.direction = 0
-      @y = @y + 1
+    if Die.direction == 'North'
+      @y_value = @y_value + 1
 
-    elsif Die.direction = 1
-      @y = @y - 1
+    elsif Die.direction == 'South'
+      @y_value = @y_value - 1
 
-    elsif Die.direction = 2
-      @x = @x + 1
+    elsif Die.direction == 'East'
+      @x_value = @x_value + 1
 
     else
-      @x = @x - 1
+      @x_value = @x_value - 1
     end
   end
 
@@ -20,6 +20,12 @@ class Kangaroo
   end
 
   def at_home?
+    if @x_value == 9 && @y_value == 9
+      print('Skippy has found his way home')
+      true
 
+    else
+      false
+    end
   end
 end
