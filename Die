@@ -1,18 +1,23 @@
 class Die
+attr_accessor :direction
+
+  def initialize
+    @direction
+  end
 
   def direction
-  random = rand(3)
+  random = rand(4)
     if random == 0
-      'North'
+      @direction = :North
 
     elsif random == 1
-      'South'
+      @direction = :South
 
     elsif random == 2
-      'East'
+      @direction = :East
 
     else
-      'West'
+      @direction = :West
     end
   end
 end
