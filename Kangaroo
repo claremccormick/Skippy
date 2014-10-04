@@ -1,21 +1,6 @@
 class Kangaroo
 
   def hop!
-    if Die.direction == 'North'
-      @y_value = @y_value + 1
-
-    elsif Die.direction == 'South'
-      @y_value = @y_value - 1
-
-    elsif Die.direction == 'East'
-      @x_value = @x_value + 1
-
-    else
-      @x_value = @x_value - 1
-    end
-  end
-
-  def move!
 
   end
 
