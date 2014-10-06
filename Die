@@ -5,7 +5,7 @@ attr_accessor :direction
     @direction
   end
 
-  def direction
+  def roll_die
   random = rand(4)
     if random == 0
       @direction = :North
