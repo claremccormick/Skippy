@@ -4,7 +4,7 @@ require_relative 'point'
 class Kangaroo
   attr_accessor :new_location, :die
 
-  def initialize grid
+  def initialize (grid)
     @new_location = Point.new
     @grid = grid
     @die = Die.new
@@ -13,18 +13,20 @@ class Kangaroo
   def hop!
     hop_counter = 0
 
-    while !at_home?
+    until at_home?
       temp_location = Point.new  #creates temporary location
+
       @new_location.print_location
       temp_location.x_value = @new_location.x_value
       temp_location.y_value = @new_location.y_value
 
-      temp_location.move! @die.direction
-      if @grid.lies_outside? temp_location
-        puts "Oops, hit the boundary: (#{temp_location.x_value}, #{temp_location.y_value})"
-      else
+      temp_location.move! @die.roll_die
+
+      if !@grid.lies_outside? temp_location
         @new_location.move! @die.direction
-        hop_counter = hop_counter + 1
+        hop_counter += 1
+      else
+        puts "Oops, hit the boundary: (#{temp_location.x_value}, #{temp_location.y_value})"
       end
     end
 
@@ -34,7 +36,6 @@ class Kangaroo
 
   def at_home?
     if @new_location.x_value == 9 && @new_location.y_value == 9
-      print('Skippy has found his way home')
       true
 
     else
@@ -42,3 +43,6 @@ class Kangaroo
     end
   end
 end
+
+
+
